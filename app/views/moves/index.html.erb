@@ -1,0 +1,10 @@
+<main class="container">
+  <h1>Moves List</h1>
+  <div class="actions">
+    <%= link_to 'New Move', new_move_path, class: 'btn btn-primary' %>
+  </div>
+
+  <div class="moves-list">
+    <%= render @moves %>
+  </div>
+</div>

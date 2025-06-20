@@ -1,0 +1,11 @@
+first:
+  name: "First Move"
+  description: "This is the first move."
+
+second:
+  name: "Second Move"
+  description: "This is the second move."
+
+third:
+  name: "Third Move"
+  description: "This is the third move."

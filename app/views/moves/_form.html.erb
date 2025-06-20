@@ -1,0 +1,12 @@
+
+<%= simple_form_for move, html: { class: "move form" } do |f| %>
+  <% if move.errors.any? %>
+    <div class="error-message">
+      <%= move.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :name, input_html: { autofocus: true } %>
+  <%= f.input :description %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>
