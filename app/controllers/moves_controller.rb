@@ -44,6 +44,6 @@ class MovesController < ApplicationController
   end
 
   def move_params
-    params.require(:move).permit(:name)
+    params.require(:move).permit(:name, :description)
   end
 end
