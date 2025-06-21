@@ -1,5 +1,10 @@
+<%= turbo_frame_tag move do %>
 <div class="move">
-  <strong>Name:</strong> <%= link_to(move.name, move_path(move)) %>
+  <strong>Name:</strong>
+    <%= link_to(move.name,
+                move_path(move),
+                data: { turbo_frame: "_top"}) %>
   <strong>Description:</strong> <%= move.description %>
   <%= render 'buttons', move: move %>
 </div>
+<% end %>

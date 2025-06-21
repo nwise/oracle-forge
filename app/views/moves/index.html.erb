@@ -1,7 +1,13 @@
 <main class="container">
   <div class='header'>
     <h1>Moves List</h1>
-    <%= link_to 'New Move', new_move_path, class: 'btn btn-primary' %>
-    <%= render @moves %>
+    <%= link_to 'New Move',
+                new_move_path,
+                class: 'btn btn-primary',
+                data: { turbo_frame: dom_id(Move.new)} %>
   </div>
+  <%= turbo_frame_tag Move.new %>
+  <%= turbo_frame_tag "moves" do %>
+    <%= render @moves %>
+  <% end %>
 </div>

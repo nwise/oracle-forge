@@ -5,5 +5,7 @@
     <h1>Edit Move</h1>
   </div>
 
-  <%= render "form", move: @move %>
+  <%= turbo_frame_tag @move do %>
+    <%= render "form", move: @move %>
+  <% end %>
 </main>
