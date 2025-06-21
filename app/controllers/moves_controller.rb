@@ -1,10 +1,10 @@
 class MovesController < ApplicationController
+  before_action :set_move, only: [:show, :edit, :update, :destroy]
   def index
     @moves = Move.all
   end
 
   def show
-    @move = Move.find(params[:id])
   end
 
   def new

@@ -1,8 +1,8 @@
 <main class="container">
-  <%= link_to sanitize("&larr; Back to move"), quote_path(@move) %>
+  <%= link_to sanitize("&larr; Back to move"), move_path(@move) %>
 
   <div class="header">
-    <h1>Edit move</h1>
+    <h1>Edit Move</h1>
   </div>
 
   <%= render "form", move: @move %>
