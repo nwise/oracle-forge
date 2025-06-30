@@ -222,6 +222,7 @@ GEM
     parser (3.3.8.0)
       ast (~> 2.4.1)
       racc
+    pg (1.5.9)
     popper_js (2.11.8)
     pp (0.6.2)
       prettyprint
@@ -357,7 +358,7 @@ GEM
     sass-embedded (1.89.2-x86_64-linux-musl)
       google-protobuf (~> 4.31)
     securerandom (0.4.1)
-    selenium-webdriver (4.33.0)
+    selenium-webdriver (4.34.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -453,6 +454,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  pg
   propshaft
   pry
   puma (>= 5.0)
