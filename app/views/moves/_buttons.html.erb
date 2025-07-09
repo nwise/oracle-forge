@@ -1,0 +1,13 @@
+<div class='row'>
+  <div class='container'>
+  <div class="move__actions">
+      <%= link_to "Edit",
+                  edit_move_path(move),
+                  class: "btn btn-warning float-start" %>
+      <%= button_to "Delete",
+                    move_path(move),
+                    method: :delete,
+                    class: "btn btn-danger float-end" %>
+    </div>
+  </div>
+</div>
