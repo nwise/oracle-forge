@@ -13,6 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Configure Git Credentials
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/nwise/oracle-forge.git
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -29,4 +35,4 @@ jobs:
       - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: npx semantic-release
+        run: npx semantic-release --debug
