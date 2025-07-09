@@ -1,10 +1,10 @@
 class MovesController < ApplicationController
+  before_action :set_move, only: [:show, :edit, :update, :destroy]
   def index
-    @moves = Move.all
+    @moves = Move.ordered
   end
 
   def show
-    @move = Move.find(params[:id])
   end
 
   def new
@@ -15,7 +15,10 @@ class MovesController < ApplicationController
     @move = Move.new(move_params)
 
     if @move.save
-      redirect_to moves_path, notice: "Move was successfully created."
+      respond_to do |format|
+        format.html { redirect_to moves_path, notice: "Move was successfully created." }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +37,11 @@ class MovesController < ApplicationController
 
   def destroy
     @move.destroy
-    redirect_to moves_path, notice: "Move was successfully destroyed."
+
+    respond_to do |format|
+      format.html { redirect_to moves_path, notice: "Move was successfully destroyed." }
+      format.turbo_stream
+    end
   end
 
   private
